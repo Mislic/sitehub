@@ -1,0 +1,13 @@
+
+server {
+    server_name {{ slug }}.dev;
+
+    root /var/www/{{ slug }}/web;
+    index index.html index.htm;
+
+    location / {
+    }
+
+    error_log /var/log/nginx/sitehub_error.log;
+    access_log /var/log/nginx/sitehub_access.log;
+}

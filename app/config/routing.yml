@@ -1,0 +1,7 @@
+api:
+    resource: @MislicApiBundle/Controller/
+    type:     annotation
+
+front:
+    resource: @MislicFrontBundle/Controller/
+    type:     annotation

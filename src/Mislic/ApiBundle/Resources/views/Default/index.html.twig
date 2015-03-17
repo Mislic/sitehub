@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>api description</title>
+	</head>
+	<body>
+		<dl>
+
+			<dt>GET /api</dt>
+			<dd>
+				<ul>
+					<li>no parameters</li>
+					<li>returns this page</li>
+					<li>text/html</li>
+				</ul>
+			</dd>
+
+			<dt>GET /api/site/list</dt>
+			<dd>
+				<ul>
+					<li>no parameters</li>
+					<li>returns list of all available sites</li>
+					<li>[{id: string, slug: string, domain: string}]</li>
+				</ul>
+			</dd>
+
+			<dt>POST /api/site/add</dt>
+			<dd>
+				<ul>
+					<li>one parameter - new site's desired slug - text/plain</li>
+					<li>throws {error: string}</li>
+					<li>returns newly added site</li>
+					<li>{id: string, slug: string, domain: string}</li>
+				</ul>
+			</dd>
+
+			<dt>GET /api/site/*id*/index_html</dt>
+			<dd>
+				<ul>
+					<li>just *id* in the url</li>
+					<li>throws {error: string}</li>
+					<li>returns site's current index.html file contents</li>
+					<li>text/html</li>
+				</ul>
+			</dd>
+
+			<dt>PUT /api/site/*id*/index_html</dt>
+			<dd>
+				<ul>
+					<li>one parameter (besides that *id* in the url) - new contents for site's index.html file - text/html</li>
+					<li>throws {error: string}</li>
+					<li>returns site</li>
+					<li>{id: string, slug: string, domain: string}</li>
+				</ul>
+			</dd>
+
+			<dt>GET /api/site/*id*/nginx_vhost</dt>
+			<dd>
+				<ul>
+					<li>just *id* in the url</li>
+					<li>throws {error: string}</li>
+					<li>returns site's current nginx vhost config file contents</li>
+					<li>text/plain</li>
+				</ul>
+			</dd>
+
+			<dt>PUT /api/site/*id*/nginx_vhost</dt>
+			<dd>
+				<ul>
+					<li>one parameter (besides that *id* in the url) - new contents for site's nginx vhost config file - text/plain</li>
+					<li>throws {error: string}</li>
+					<li>returns site</li>
+					<li>{id: string, slug: string, domain: string}</li>
+				</ul>
+			</dd>
+
+		</dl>
+	</body>
+</html>
